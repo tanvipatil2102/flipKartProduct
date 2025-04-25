@@ -1,0 +1,8 @@
+<div class="rating-stars">
+    <ng-container *ngFor="let _ of getStars(); let i = index">
+      <div class="star-wrapper">
+        <i class="fa-solid fa-star star-fill" [ngStyle]="{ width: getFillPercent(i) + '%' }"></i>
+        <i class="fa-regular fa-star star-base"></i>
+      </div>
+    </ng-container>
+  </div>

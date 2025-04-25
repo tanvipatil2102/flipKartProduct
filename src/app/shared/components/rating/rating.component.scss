@@ -1,0 +1,33 @@
+.rating-stars {
+    display: flex;
+    color: #ccc;
+  }
+  
+  .star-wrapper {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+    
+  }
+  
+  .star-fill,
+  .star-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    font-size: 16px;
+    pointer-events: none;
+  }
+  
+  .star-fill {
+    color: #FCB500;
+    overflow: hidden;
+    // white-space: nowrap;
+  }
+  
+  .star-base {
+    color: #FCB500;
+  }
+  

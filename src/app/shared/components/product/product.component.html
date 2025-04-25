@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-6">
+            <img src="{{getProdArr.images}}" alt="{{getProdArr.title}}" width="90%">
+        </div>
+        <div class="col-md-6">
+            <small class="secondary">Categories: {{getProdArr.category}}</small>
+            <h2>{{getProdArr.title}}</h2>
+            <div class="d-flex">
+                <app-rating [rating]="getProdArr.rating" [maxRating]="5"></app-rating>
+                <span class="ml-3 text-muted">Reviews ({{getProdArr.reviews_count}})</span>
+            </div>
+            <h1 class="text-danger mt-3">{{getProdArr.total_price}}</h1>
+            <div class="features">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let f of getProdArr.product_description">
+                        <i class="fa-solid fa-circle-check"></i> {{f}}
+                    </li>
+                </ul>
+            </div>
+            <div class="tags">
+                <span *ngFor="let t of getProdArr.tags">{{t}}</span>
+            </div>
+            <div class="prodCount mt-4">
+                <button class="mr-2 btnClick" (click)="onDecrease()">-</button>
+                <span class="text-danger font-weight-bold">{{prodCount}}</span>
+                <button class="ml-2 btnClick" (click)="onIncrease()">+</button>
+
+                <button class="btn btn-info ml-3"> <i class="fa-solid fa-cart-plus mr-2"></i> Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <mat-tab-group mat-align-tabs="start">
+                <mat-tab label="Product Details">{{getProdArr.product_details}}</mat-tab>
+                <mat-tab label="Return Policy">{{getProdArr.return_policy || 'No Return Policy'}}</mat-tab>
+              </mat-tab-group>
+        </div>
+    </div>
+</div>
