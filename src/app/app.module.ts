@@ -10,6 +10,8 @@ import { ProductComponent } from './shared/components/product/product.component'
 import { RatingComponent } from './shared/components/rating/rating.component';
 import { BooksAndToysComponent } from './shared/components/books-and-toys/books-and-toys.component';
 import { MaterialModule } from './material/material/material.module';
+import { HomeComponent } from './shared/components/home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,14 +20,16 @@ import { MaterialModule } from './material/material/material.module';
     ProductDashboardComponent,
     ProductComponent,
     RatingComponent,
-    BooksAndToysComponent
+    BooksAndToysComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

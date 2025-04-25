@@ -1,0 +1,48 @@
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Sign In</h2>
+                    <form [formGroup]="signInForm" (ngSubmit)="onFormSubmit()">
+                        <div class="form-group">
+                            <label for="userName">UserName</label>
+                            <input type="text" class="form-control" name="userName" id="userName" formControlName="userName">
+                            
+                            <strong *ngIf="f['userName'].touched && f['userName'].hasError('required')" class="text-danger">
+                            UserName is required field
+                            </strong>
+
+                            <strong class="text-danger" *ngIf="f['userName'].dirty && f['userName'].hasError('minlength')">
+                                MinLength of UserName is 6
+                            </strong>
+
+                            <strong class="text-danger" *ngIf="f['userName'].dirty && f['userName'].hasError('maxlength')">
+                                MaxLength of UserName is 12
+                            </strong>
+
+
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" formControlName="email">
+
+                            <strong *ngIf="f['email'].touched && f['email'].hasError('required')" class="text-danger">
+                                Email is required field
+                            </strong>
+
+                            <strong class="text-danger" *ngIf="f['email'].dirty && f['email'].hasError('pattern')">
+                                Incorrect Email Pattern, Pattern should be eg. {{'(jhon@email.com)'}}
+                            </strong>
+
+
+                        </div>
+                        <button 
+                        [disabled]="signInForm.invalid"
+                        class="btn btn-outline-warning">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
