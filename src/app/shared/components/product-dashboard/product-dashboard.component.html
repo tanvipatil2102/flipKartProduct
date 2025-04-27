@@ -4,7 +4,7 @@
     <div class="col-md-3 mt-3" *ngFor="let catg of getProdArr">
         <div class="card" [routerLink]="['/products', catg.title]">
             <div class="card-header p-0">
-                <img [src]="catg.imgUrl" [alt]="catg.title">
+                <img [src]="catg.imgUrl" [alt]="catg.title" class="img-fluid">
             </div>
             <div class="card-body text-center">
                 <h3 class="font-weight-bold text-primary mb-0 pb-0">{{catg.title}}</h3>

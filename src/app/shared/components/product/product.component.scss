@@ -1,8 +1,18 @@
-img{
+.main-img{
     height: 450px;
-    object-fit: cover;
+    object-fit: contain;
+    animation: fade-in .6s ease-in-out;
 }
 
+.smallImgs{
+    border: 2px solid darkgray;
+    border-radius: 3px;
+    height: 80px;
+    width: 70px;
+    overflow: hidden;
+    margin-right: 3px;
+    object-fit: contain;
+}
 ul{
     li{
         border: none;
@@ -22,6 +32,8 @@ ul{
         margin-right: 3px;
         color: #fff;
         padding: 2px;
+        margin-top: 3px;
+        display: inline-block;
     }
 }
 
@@ -29,5 +41,14 @@ ul{
     .btnClick{
         border-radius: 50%;
         padding: 8px 15px;
+    }
+}
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

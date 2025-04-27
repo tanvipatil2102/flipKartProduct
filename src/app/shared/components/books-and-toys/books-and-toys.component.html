@@ -1,8 +1,9 @@
 <div class="row">
     <div class="col-md-3 mt-3" *ngFor="let prod of getProdCatgArr">
         <div class="card" [routerLink]="[prod._id]">
-            <div class="card-header p-0">
-                <img [src]="prod.images" [alt]="prod.title" width="200">
+            <div class="card-header p-0 text-center">
+                <img [src]="prod.images[0]" [alt]="prod.title" class="img-fluid main-Img">
+                <img [src]="prod.images[1]" [alt]="prod.title" class="img-fluid hover-Img">
             </div>
             <div class="card-body">
                 <small>{{prod.category}} {{prod.subcategory}}</small>

@@ -6,8 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./rating.component.scss']
 })
 export class RatingComponent implements OnInit {
+[x: string]: any;
 
-  @Input() rating: number = 0;
+  @Input() rating!: number;
   @Input() maxRating: number = 5;
   constructor() { }
 
@@ -16,13 +17,17 @@ export class RatingComponent implements OnInit {
 
   getFillPercent(index: number): number {
     const diff = this.rating - index;
-    if (diff >= 1) return 100;
-    if (diff > 0) return diff * 100;
+    if(diff >= 1){
+      return 100;
+    }
+    if (diff > 0){
+      return diff * 100;
+    }
     return 0;
   }
 
   getStars(): number[] {
-    return Array(this.maxRating).fill(0);
+    return Array(this.maxRating);
   }
 
 }

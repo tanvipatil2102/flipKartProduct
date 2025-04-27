@@ -1,7 +1,12 @@
 <div class="container">
     <div class="row mt-3">
-        <div class="col-md-6">
-            <img src="{{getProdArr.images}}" alt="{{getProdArr.title}}" width="90%">
+        <div class="col-md-6 text-center">
+            <img class="main-img img-fluid" src="{{selectedImg}}" alt="{{getProdArr.title}}">
+            <div class="imgs">
+                <div class="smallImgs d-inline-block mt-0" *ngFor="let img of getProdArr.images">
+                    <img [src]="img" alt="" class="img-fluid" width="100" (click)="selectedImg = img">
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <small class="secondary">Categories: {{getProdArr.category}}</small>
@@ -35,6 +40,12 @@
             <mat-tab-group mat-align-tabs="start">
                 <mat-tab label="Product Details">{{getProdArr.product_details}}</mat-tab>
                 <mat-tab label="Return Policy">{{getProdArr.return_policy || 'No Return Policy'}}</mat-tab>
+                <mat-tab label="Product Specification">
+                    <ng-container *ngFor="let spec of getProdArr.product_specifications">
+                        <p><strong>{{spec.specification_name}}</strong> : {{spec.specification_value}}</p>
+                        
+                    </ng-container>
+                </mat-tab>
               </mat-tab-group>
         </div>
     </div>

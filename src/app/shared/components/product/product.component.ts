@@ -11,6 +11,7 @@ export class ProductComponent implements OnInit {
   getProdArr !: any;
   prodId !: string;
   prodCount : number = 1;
+  selectedImg !: Array<string>;
   constructor(
     private _router : ActivatedRoute,
     private _productService : ProductService
@@ -27,6 +28,7 @@ export class ProductComponent implements OnInit {
         .subscribe(res => {
           console.log(res);
           this.getProdArr = res;
+          this.selectedImg = res.images[0];
         })
   }
 

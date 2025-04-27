@@ -24,10 +24,11 @@
   .star-fill {
     color: #FCB500;
     overflow: hidden;
+    z-index: 1;
     // white-space: nowrap;
   }
   
   .star-base {
-    color: #FCB500;
+    color: rgb(218, 207, 207);
   }
   
